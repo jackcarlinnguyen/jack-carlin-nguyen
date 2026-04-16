@@ -24,7 +24,13 @@
     ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 2px; }
 
     /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1.1rem 4rem; background: rgba(13,31,45,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(232,101,26,0.18); }
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.1rem 4rem;
+      background: rgba(13,31,45,0.92); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(232,101,26,0.18);
+    }
     .nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.35rem; letter-spacing: 0.08em; color: var(--white); text-decoration: none; }
     .nav-logo span { color: var(--orange); }
     .nav-links { display: flex; gap: 2.5rem; list-style: none; }
@@ -34,9 +40,21 @@
     .nav-links a:hover::after { width: 100%; }
 
     /* HERO */
-    .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 4rem; padding: 7rem 4rem 4rem; position: relative; overflow: hidden; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 55% 70% at 72% 50%, rgba(232,101,26,0.07) 0%, transparent 70%); pointer-events: none; }
-    .hero::after { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(232,101,26,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(232,101,26,0.03) 1px, transparent 1px); background-size: 64px 64px; pointer-events: none; }
+    .hero {
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 4rem; padding: 7rem 4rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 72% 50%, rgba(232,101,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(232,101,26,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(232,101,26,0.03) 1px, transparent 1px);
+      background-size: 64px 64px; pointer-events: none;
+    }
     .hero-text { position: relative; z-index: 1; animation: fadeUp 0.8s ease both; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeRight { from { opacity: 0; transform: translateX(30px); } to { opacity: 1; transform: translateX(0); } }
@@ -44,7 +62,7 @@
     .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--orange); display: block; }
     h1.hero-name { font-family: 'Bebas Neue', sans-serif; font-size: clamp(3.8rem, 7.5vw, 7rem); line-height: 0.93; letter-spacing: 0.02em; margin-bottom: 1.5rem; }
     h1.hero-name .accent { color: var(--orange); }
-    .hero-tagline { font-size: 0.95rem; font-weight: 300; line-height: 1.75; color: rgba(255,255,255,0.68); max-width: 480px; margin-bottom: 2rem; padding-left: 1rem; border-left: 2px solid var(--orange); }
+    .hero-tagline { font-size: 1rem; font-weight: 300; line-height: 1.7; color: rgba(255,255,255,0.68); max-width: 460px; margin-bottom: 2rem; padding-left: 1rem; border-left: 2px solid var(--orange); }
     .hero-contacts { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
     .chip { font-family: 'DM Mono', monospace; font-size: 0.67rem; padding: 0.32rem 0.7rem; border: 1px solid rgba(232,101,26,0.3); color: rgba(255,255,255,0.55); text-decoration: none; transition: all 0.2s; }
     .chip:hover { border-color: var(--orange); color: var(--orange); background: rgba(232,101,26,0.06); }
@@ -54,13 +72,7 @@
     .btn-outline { display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.82rem 1.9rem; background: transparent; color: var(--white); font-weight: 500; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(255,255,255,0.22); transition: all 0.25s ease; }
     .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
 
-    /* Hero stats + profile */
     .hero-stats { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(232,101,26,0.12); border: 1px solid rgba(232,101,26,0.12); animation: fadeRight 0.9s ease 0.3s both; }
-    .hero-profile-card { grid-column: 1 / -1; display: flex; align-items: center; gap: 1.4rem; padding: 1.4rem 1.6rem; background: rgba(13,31,45,0.97); border-bottom: 1px solid rgba(232,101,26,0.12); }
-    .hero-profile-img-wrap { width: 160px; height: 160px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 3px solid var(--orange); box-shadow: 0 0 0 6px rgba(232,101,26,0.12); }
-    .hero-profile-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 12%; }
-    .hero-profile-card-text { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
-    .hero-profile-card-text strong { color: var(--white); display: block; font-size: 0.92rem; margin-bottom: 0.1rem; font-weight: 600; }
     .stat-card { background: rgba(13,31,45,0.97); padding: 1.8rem 1.6rem; position: relative; overflow: hidden; transition: background 0.3s; }
     .stat-card::before { content: ''; position: absolute; top: 0; left: 0; width: 3px; height: 0; background: var(--orange); transition: height 0.35s ease; }
     .stat-card:hover { background: rgba(26,53,80,0.95); }
@@ -78,6 +90,7 @@
 
     /* PROJECTS */
     #projects { background: var(--navy); }
+
     .project-header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1.5rem; padding: 1rem 1.5rem; background: var(--navy2); border: 1px solid rgba(232,101,26,0.18); border-bottom: none; margin-top: 2.5rem; }
     .project-header:first-of-type { margin-top: 0; }
     .proj-num { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: rgba(232,101,26,0.22); line-height: 1; }
@@ -97,16 +110,17 @@
     .beat-img { position: relative; overflow: hidden; aspect-ratio: 4/3; background: var(--navy2); }
     .beat-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
     .project-beat:hover .beat-img img { transform: scale(1.04); }
+    .beat-img-placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--navy2) 0%, rgba(26,53,80,0.4) 100%); font-family: 'DM Mono', monospace; font-size: 0.65rem; color: rgba(255,255,255,0.2); letter-spacing: 0.1em; text-transform: uppercase; }
     .beat-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 0.55rem 0.85rem; background: rgba(13,31,45,0.93); border-top: 2px solid var(--orange); }
     .beat-caption strong { display: block; font-size: 0.73rem; font-weight: 600; color: var(--white); letter-spacing: 0.03em; }
     .beat-caption span { font-family: 'DM Mono', monospace; font-size: 0.62rem; color: rgba(168,196,212,0.75); }
 
-    .beat-content { padding: 2.2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.85rem; background: rgba(13,31,45,0.5); overflow-y: auto; }
+    .beat-content { padding: 2.2rem 2.5rem; display: flex; flex-direction: column; justify-content: center; gap: 0.9rem; background: rgba(13,31,45,0.5); }
     .beat-tag { font-family: 'DM Mono', monospace; font-size: 0.63rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--orange); }
     .beat-heading { font-family: 'Bebas Neue', sans-serif; font-size: 1.3rem; letter-spacing: 0.05em; color: var(--white); line-height: 1.2; }
-    .beat-body { font-size: 0.83rem; color: rgba(255,255,255,0.65); line-height: 1.7; }
+    .beat-body { font-size: 0.83rem; color: rgba(255,255,255,0.62); line-height: 1.65; }
     .beat-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
-    .beat-bullets li { font-size: 0.82rem; color: rgba(255,255,255,0.62); line-height: 1.6; padding-left: 1rem; position: relative; }
+    .beat-bullets li { font-size: 0.83rem; color: rgba(255,255,255,0.65); line-height: 1.55; padding-left: 1rem; position: relative; }
     .beat-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--orange); font-size: 0.65rem; top: 0.2em; }
     .beat-bullets li strong { color: var(--white); font-weight: 600; }
 
@@ -174,6 +188,26 @@
     @media (max-width: 540px) {
       .skills-grid { grid-template-columns: 1fr; }
     }
+
+    .hero-profile-card {
+      grid-column: 1 / -1;
+      display: flex; align-items: center; gap: 1.4rem;
+      padding: 1.4rem 1.6rem;
+      background: rgba(13,31,45,0.97);
+      border-bottom: 1px solid rgba(232,101,26,0.12);
+    }
+    .hero-profile-img-wrap {
+      width: 160px; height: 160px; border-radius: 50%;
+      overflow: hidden; flex-shrink: 0;
+      border: 3px solid var(--orange);
+      box-shadow: 0 0 0 6px rgba(232,101,26,0.12);
+    }
+    .hero-profile-img-wrap img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 12%;
+    }
+    .hero-profile-card-text { font-size: 0.78rem; color: rgba(255,255,255,0.55); line-height: 1.6; }
+    .hero-profile-card-text strong { color: var(--white); display: block; font-size: 0.92rem; margin-bottom: 0.1rem; font-weight: 600; }
   </style>
 </head>
 <body>
@@ -195,7 +229,7 @@
   <div class="hero-text">
     <div class="hero-eyebrow">Mechanical Engineering Portfolio</div>
     <h1 class="hero-name">Jack<br><span class="accent">Carlin-Nguyen</span></h1>
-    <p class="hero-tagline">I came up through competitive robotics, where you learn fast that no single person builds the robot — everyone owns a piece, and the whole thing only works if every piece does. That mindset followed me to Northeastern, onto a Formula-style EV race team, and into a makerspace where I help others build their own things. I care about understanding the whole system, not just my part of it.</p>
+    <p class="hero-tagline">Sophomore ME student who moves between SolidWorks and the shop floor — I design it, build it, test it, and redesign when it breaks.</p>
     <div class="hero-contacts">
       <a href="mailto:carlinnguyen.j@northeastern.edu" class="chip">carlinnguyen.j@northeastern.edu</a>
       <a href="tel:2027027278" class="chip">(202) 702-7278</a>
@@ -208,7 +242,6 @@
       <a href="mailto:carlinnguyen.j@northeastern.edu" class="btn-outline">Get in Touch</a>
     </div>
   </div>
-
   <div class="hero-stats">
     <div class="hero-profile-card">
       <div class="hero-profile-img-wrap">
@@ -250,7 +283,7 @@
     <div class="section-rule"></div>
   </div>
 
-  <!-- NER -->
+  <!-- NER header -->
   <div class="project-header">
     <div class="proj-num">01</div>
     <div>
@@ -265,9 +298,9 @@
     </div>
   </div>
 
-  <!-- NER Beat 1 -->
   <div class="project-beat">
     <div class="beat-img">
+      <!-- ADD YOUR IMAGE: <img src="images/ner-bracket.jpg" alt="Pump Mounting Bracket SolidWorks"> -->
       <img src="images/ner-bracket.jpg" alt="Pump Mounting Bracket SolidWorks">
       <div class="beat-caption">
         <strong>Pump Mounting Bracket — SolidWorks</strong>
@@ -275,20 +308,20 @@
       </div>
     </div>
     <div class="beat-content">
-      <div class="beat-tag">How I Got Here</div>
-      <h3 class="beat-heading">The Unglamorous Part of the Car</h3>
-      <p class="beat-body">I joined NER because it reminded me of FIRST — a team building toward one goal, with competition at the end. I landed in motor cooling almost by accident. The subteam needed people, and I raised my hand. Cooling isn't flashy. Nobody's talking about the swirl pot at the reveal. But the more I worked on it, the more I realized: if the motor overheats, the car stops. Past NER cars had heat issues at Michigan competitions where summer temperatures push every thermal margin to the edge. That's when it clicked — cooling isn't a detail, it's a constraint everything else is designed around.</p>
-      <div class="beat-tag">What I Did</div>
+      <div class="beat-tag">The Challenge</div>
+      <h3 class="beat-heading">Design for Mass &amp; Packaging</h3>
+      <p class="beat-body">Design a lighter EV cooling circuit without sacrificing thermal performance — every gram matters on a race car and the chassis leaves almost no room for error.</p>
+      <div class="beat-tag">What I Designed</div>
       <ul class="beat-bullets">
-        <li>Rerouted tubing paths and optimized diameters — <strong>cut 2 lb</strong> from the cooling loop without touching thermal performance</li>
-        <li>Modeled the pump welding jig and swirl pot bracket in SolidWorks, designing for the tight packaging reality of a tube-frame chassis where nothing fits cleanly</li>
+        <li>Rerouted tubing and optimized diameter — <strong>cut 2 lb</strong> from the cooling loop with no thermal penalty</li>
+        <li>Modeled pump welding jig and swirl pot mounting bracket in SolidWorks for tight chassis clearances and weld repeatability</li>
       </ul>
     </div>
   </div>
 
-  <!-- NER Beat 2 -->
   <div class="project-beat flip">
     <div class="beat-img">
+      <!-- ADD YOUR IMAGE: <img src="images/ner-bench-test.jpg" alt="Flow Meter Bench Test"> -->
       <img src="images/ner-bench-test.jpg" alt="Flow Meter Bench Test Setup">
       <div class="beat-caption">
         <strong>Flow Meter Bench Test Setup</strong>
@@ -297,20 +330,19 @@
     </div>
     <div class="beat-content">
       <div class="beat-tag">Test &amp; Validate</div>
-      <h3 class="beat-heading">You Don't Know Until You Measure</h3>
-      <p class="beat-body">Designing something in CAD and knowing it works are two different things. I built a bench test circuit — pump, turbine flow meter, radiator, tubing — to actually measure what the system was doing versus what the spec sheet said it should do. The gap between those two numbers is where real engineering happens.</p>
+      <h3 class="beat-heading">Instrument, Measure, Iterate</h3>
       <ul class="beat-bullets">
-        <li>Compared rated vs. measured pump flow across multiple tubing configurations — data that directly informed which diameter and routing to commit to</li>
-        <li>Ran comparative thermal dissipation tests and logged failure modes at each iteration</li>
-        <li>Every result fed back into the next design decision — nothing got changed without a reason</li>
+        <li>Built bench test circuit with turbine flow meter — compared rated vs. measured pump performance</li>
+        <li>Ran comparative thermal dissipation tests across multiple tubing diameter configurations</li>
+        <li>Documented failure modes and root causes at each iteration; each finding drove the next design revision</li>
       </ul>
     </div>
   </div>
 
-  <!-- NER Beat 3 -->
   <div class="project-beat">
     <div class="beat-img">
-      <img src="images/swirlpot-lid.png" alt="Redesigned Swirl Pot Lid">
+      <!-- ADD YOUR IMAGE: <img src="images/swirlpot-lid.png" alt="Redesigned Swirl Pot Lid"> -->
+      <img src="images/swirlpot-lid.png" alt="Redesigned Swirl Pot Lid SolidWorks">
       <div class="beat-caption">
         <strong>Redesigned Swirl Pot Lid — SolidWorks</strong>
         <span>Revised sealing surface · tighter tolerances · SLA printed</span>
@@ -318,37 +350,39 @@
     </div>
     <div class="beat-content">
       <div class="beat-tag">Problem Identified</div>
-      <h3 class="beat-heading">We Saw Coolant on the Floor</h3>
-      <p class="beat-body">During testing, coolant showed up where it wasn't supposed to be. The OEM swirl pot lid wasn't sealing. Once we actually looked at it, the mismatch was obvious — you could see it. I measured the original geometry against what the sealing face needed to be, and the tolerance stack-up was right there. The gap wasn't dramatic, but it didn't need to be. Any gap means air and coolant escaping, which means pressure loss, which means the system isn't doing its job.</p>
+      <h3 class="beat-heading">Root Cause → Fix</h3>
       <ul class="beat-bullets">
-        <li>Traced the failure to a tolerance issue on the sealing face — visible mismatch once the part was measured against spec</li>
-        <li>Redesigned the lid from scratch with corrected tolerances to close the gap entirely</li>
-        <li>Chose SLA over FDM specifically for surface finish — FDM layer lines don't seal, SLA does</li>
+        <li>OEM lid was leaking fluid and air under operating pressure</li>
+        <li>Measured the original geometry and traced the failure to a tolerance stack-up on the sealing face — the gap was letting both air and coolant escape</li>
+      </ul>
+      <div class="beat-tag">Solution</div>
+      <ul class="beat-bullets">
+        <li>Redesigned the sealing surface with corrected tolerances to close the gap entirely</li>
+        <li>SLA printed instead of FDM — higher resolution surface finish is critical for an airtight coolant seal</li>
       </ul>
     </div>
   </div>
 
-  <!-- NER Beat 4 -->
   <div class="project-beat flip">
     <div class="beat-img">
-      <img src="images/pdm-mockup.jpg" alt="PDM Integration Mockup">
+      <!-- ADD YOUR IMAGE: <img src="images/pdm-mockup.jpg" alt="PDM Integration Mockup"> -->
+      <img src="images/pdm-mockup.jpg" alt="Swirl Pot Radiator PDM Integration Mockup">
       <div class="beat-caption">
         <strong>Swirl Pot + Radiator — PDM Integration Mockup</strong>
         <span>Positional assembly for master powertrain CAD</span>
       </div>
     </div>
     <div class="beat-content">
-      <div class="beat-tag">Systems Thinking</div>
-      <h3 class="beat-heading">Your Part Lives Inside a Bigger System</h3>
-      <p class="beat-body">One thing I've learned working on a car with a full team: your component doesn't exist in isolation. The swirl pot and radiator have to fit inside a chassis that other subteams are also designing around. If your geometry is wrong, you find out at assembly — and that's a bad time to find out. I built a positional mockup so our cooling components could be dropped into the master powertrain CAD via SolidWorks PDM before anything was built. Spatial conflicts caught in software cost an afternoon. Caught in metal, they cost a lot more.</p>
+      <div class="beat-tag">Systems Integration</div>
+      <h3 class="beat-heading">PDM Workflow &amp; CAD Management</h3>
       <ul class="beat-bullets">
-        <li>Maintained shared CAD files through SolidWorks PDM so the whole team always worked from current geometry</li>
-        <li>Caught packaging conflicts virtually before they became fabrication problems</li>
+        <li>Built positional mockup of swirl pot and radiator so sub-assemblies could drop directly into the team's master powertrain CAD via SolidWorks PDM</li>
+        <li>Ensures correct spatial relationships across all cooling components before physical build — no clashes at assembly time</li>
       </ul>
     </div>
   </div>
 
-  <!-- STEM TOY -->
+  <!-- STEM TOY header -->
   <div class="project-header">
     <div class="proj-num">02</div>
     <div>
@@ -363,50 +397,51 @@
     </div>
   </div>
 
-  <!-- STEM Beat 1 -->
   <div class="project-beat">
     <div class="beat-img">
-      <img src="images/solidworks-exploded.png" alt="SolidWorks Exploded View">
+      <!-- ADD YOUR IMAGE: <img src="images/solidworks-exploded.png" alt="SolidWorks Exploded View"> -->
+      <img src="images/solidworks-exploded.png" alt="Full Assembly SolidWorks Exploded View">
       <div class="beat-caption">
         <strong>Full Assembly — SolidWorks Exploded View</strong>
         <span>All components modeled by Jack Carlin-Nguyen</span>
       </div>
     </div>
     <div class="beat-content">
-      <div class="beat-tag">The Brief</div>
-      <h3 class="beat-heading">Design for a User Who Won't Read Instructions</h3>
-      <p class="beat-body">The constraint was simple and brutal: design a STEM toy for kindergarteners, build it in a makerspace, and spend under $100. The user testing was even more clarifying — five-year-olds do not care about your design intent. They interact with what's in front of them, and if it doesn't make sense immediately, they move on. That meant everything had to be intuitive by feel, not by explanation.</p>
+      <div class="beat-tag">What I Built</div>
+      <h3 class="beat-heading">Marble-Powered STEM Toy</h3>
       <ul class="beat-bullets">
-        <li>Led all SolidWorks modeling — full exploded assembly, individual part drawings, and 3D-printed snap-fit gear holders</li>
-        <li>Panel angle went through three iterations: <strong>45° → 25° → 35°</strong> — each tested with real kids before the next was cut</li>
-        <li>The 35° final angle was a compromise: enough slope to keep marbles moving, not so steep they couldn't interact with the gears</li>
+        <li>Marble-powered toy for kindergarteners — laser-cut gears on a 35° panel redirect a marble into a moveable catch bin</li>
+        <li>Led all SolidWorks modeling: full exploded assembly, part drawings, and 3D-printed snap-fit gear holders</li>
+        <li>Panel angle iterated <strong>45° → 25° → 35°</strong> through physical testing with real 5–6 year old users</li>
       </ul>
     </div>
   </div>
 
-  <!-- STEM Beat 2 -->
   <div class="project-beat flip">
     <div class="beat-img">
-      <img src="images/build-prototype.jpg" alt="Physical Prototype">
+      <!-- ADD YOUR IMAGE: <img src="images/build-prototype.jpg" alt="Physical Prototype"> -->
+      <img src="images/build-prototype.jpg" alt="Physical Prototype 50 Percent Complete">
       <div class="beat-caption">
         <strong>Physical Prototype — 50% Complete</strong>
         <span>Laser-cut wood + acrylic · assembled in makerspace</span>
       </div>
     </div>
     <div class="beat-content">
-      <div class="beat-tag">When the Users Fix Your Design For You</div>
-      <h3 class="beat-heading">The Kids Were Right</h3>
-      <p class="beat-body">At the first school visit, marbles kept getting stuck in the gears. The kids didn't complain — they just tried again, and sometimes it worked, sometimes it didn't. That inconsistency was the problem. We watched them play, took notes, and went back to the shop. The gear holders had square notches; the marble's path was creating a pinch point. We added a fillet to the entry geometry and the problem went away. At the final showcase, thirty kids played with it and it held up. Watching them figure it out — and genuinely enjoy it — was one of the better moments of the semester.</p>
+      <div class="beat-tag">Fabrication</div>
+      <h3 class="beat-heading">Build, Test, Iterate</h3>
       <ul class="beat-bullets">
-        <li>Laser-cut gears from 0.11" plywood; gear holders redesigned from square to filleted circular notch after live user observation</li>
-        <li>Integrated Arduino UNO, micro switches, LCD prompt system, and green LED scoring — all from a single SparkFun kit</li>
-        <li>Solved a firmware delay bug blocking simultaneous LCD + LED outputs</li>
-        <li>Total spend: <strong>$10 of a $100 budget</strong> — makerspace materials covered the rest</li>
+        <li>Laser-cut gears from 0.11" plywood; snap-fit holders revised from square to circular notch after user feedback</li>
+      </ul>
+      <div class="beat-tag">Electronics &amp; Code</div>
+      <ul class="beat-bullets">
+        <li>Integrated Arduino UNO, micro switches, LCD screen, and green LED scoring feedback</li>
+        <li>Solved concurrent-action firmware delay bug for simultaneous LCD + LED outputs</li>
+        <li>Completed for <strong>under $10 of $100 budget</strong> using makerspace materials</li>
       </ul>
     </div>
   </div>
 
-  <!-- ROBOTICS -->
+  <!-- ROBOTICS header -->
   <div class="project-header">
     <div class="proj-num">03</div>
     <div>
@@ -421,42 +456,40 @@
     </div>
   </div>
 
-  <!-- Robotics Beat 1 -->
   <div class="project-beat">
     <div class="beat-img">
-      <img src="images/robot-intake.jpg" alt="FTC Robot Intake">
+      <!-- ADD YOUR IMAGE: <img src="images/robot-intake.jpg" alt="FTC Robot Intake"> -->
+      <img src="images/robot-intake.jpg" alt="FTC Robot Intake Mechanism">
       <div class="beat-caption">
         <strong>FTC Robot — Intake Mechanism</strong>
         <span>REV Control Hub · custom ball capture system</span>
       </div>
     </div>
     <div class="beat-content">
-      <div class="beat-tag">Where It Started</div>
-      <h3 class="beat-heading">Everyone Had a Role and Trusted Each Other</h3>
-      <p class="beat-body">FIRST Robotics was where I learned what a real engineering team actually feels like. Not everyone doing everything — everyone owning something specific, and trusting that the person next to them owned theirs. I started on mechanical, designing the intake and drivetrain from scratch in CAD. When 3D-printed parts failed under match loads, we didn't just reprint them — we figured out why the load path was wrong and redesigned. That habit of asking why before fixing stuck with me.</p>
+      <div class="beat-tag">Mechanical Design</div>
+      <h3 class="beat-heading">Designed from Scratch</h3>
       <ul class="beat-bullets">
-        <li>Designed intake, drivetrain, and <strong>double linear slide</strong> subsystem from scratch in CAD across multiple seasons</li>
-        <li>Identified structural failures in 3D-printed competition parts under load; traced root cause and redesigned geometry before reprinting</li>
-        <li>Fabricated and assembled custom mechanical components — often under time pressure with competition the next day</li>
+        <li>Designed intake, drivetrain, and <strong>double linear slide</strong> subsystem entirely from scratch in CAD</li>
+        <li>Identified structural failures in 3D-printed parts under competition loads; redesigned geometry for improved load paths</li>
+        <li>Fabricated and assembled custom mechanical components across multiple competition seasons</li>
       </ul>
     </div>
   </div>
 
-  <!-- Robotics Beat 2 -->
   <div class="project-beat flip">
     <div class="beat-img">
-      <img src="images/robot-slide.jpg" alt="FTC Linear Slide">
+      <!-- ADD YOUR IMAGE: <img src="images/robot-slide.jpg" alt="FTC Linear Slide"> -->
+      <img src="images/robot-slide.jpg" alt="FTC Robot Double Linear Slide Mecanum Drive">
       <div class="beat-caption">
         <strong>FTC Robot — Double Linear Slide + Mecanum Drive</strong>
         <span>Custom drivetrain and slide system designed from scratch</span>
       </div>
     </div>
     <div class="beat-content">
-      <div class="beat-tag">Builder → Driver → Drive Coach</div>
-      <h3 class="beat-heading">Understanding the Whole Robot</h3>
-      <p class="beat-body">By the time I became Drive Coach, I'd already built the robot, driven it in matches, and watched it fail in ways I hadn't anticipated. That progression mattered. As Drive Coach you're making real-time strategy calls during a two-and-a-half minute match — which alliance to pick, which scoring path to run, when to play defense. You can only do that well if you understand what the robot can and can't do under pressure. Building it first meant I knew exactly where its limits were.</p>
+      <div class="beat-tag">Build → Driver → Drive Coach</div>
+      <h3 class="beat-heading">Promoted Across 3 Seasons</h3>
       <ul class="beat-bullets">
-        <li>Led real-time match strategy and alliance coordination at the FIRST World Championship</li>
+        <li>Promoted across three seasons — fabrication, then Driver, then Drive Coach leading real-time match strategy at World Championships</li>
         <li>Teams earned: Rookie All Star, Design Award, Motivate Award, District Championship qualifier</li>
       </ul>
     </div>
@@ -537,6 +570,7 @@
       </div>
       <div class="exp-date">Sept 2021 – Jun 2024</div>
     </div>
+    
   </div>
 </section>
 
